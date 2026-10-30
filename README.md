@@ -1,25 +1,20 @@
-# Proyecto Python IMC
+# Calculadora de IMC 🐍
 
 ## Descripción
-Programa desarrollado en Python para calcular el Índice de Masa Corporal (IMC).
+Programa desarrollado en Python para calcular el Índice de Masa Corporal (IMC) y mostrar los resultados de forma organizada.
 
-## Datos solicitados
-- Nombre
-- Edad en años
-- Peso en kilogramos
-- Estatura en metros
-
-## Fórmula
-IMC = peso / (estatura ** 2)
+## Funcionalidades
+- Ingreso de nombres, apellidos, peso y estatura.
+- Formateo de nombres con `.strip()` y `.title()`.
+- Cálculo del IMC con dos decimales.
+- Uso de f-strings para presentar los resultados.
 
 ## Ejecución
-Abre una terminal en la carpeta del proyecto y ejecuta:
+Ejecutar el siguiente comando:
 
 ```bash
-python calculadora_imc2.py
+python calculadora_imc.py
 ```
 
-## Tecnologías
-- Python
-- Git
-- GitHub
+**Actividad:** Fundamentos de Python – Semana 3.  
+**Reto:** Formateo y Estética de Datos.
