@@ -1,4 +1,4 @@
-# Calculadora de IMC 🐍
+# Calculadora de IMC 
 
 ## Descripción
 Programa desarrollado en Python para calcular el Índice de Masa Corporal (IMC) y mostrar los resultados de forma organizada.
