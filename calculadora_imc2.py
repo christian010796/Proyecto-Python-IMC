@@ -1,19 +1,32 @@
-# Proyecto: Calculadora de IMC
-# Actividad: Fundamentos de Python - Semana 2
+# Calculadora de Índice de Masa Corporal (IMC)
+# Fundamentos de Python - Semana 3
+# Reto: Formateo y Estética de Datos
 
-# 1. Solicitar los datos al usuario
-nombre = input("Ingresa tu nombre: ")
-edad = int(input("Ingresa tu edad en años: "))
-peso = float(input("Ingresa tu peso en kilogramos: "))
-estatura = float(input("Ingresa tu estatura en metros: "))
+print("=" * 45)
+print("       CALCULADORA DE IMC")
+print("=" * 45)
 
-# 2. Calcular el Índice de Masa Corporal
+# Solicitar los datos personales
+nombres = input("Ingrese sus nombres: ").strip().title()
+apellidos = input("Ingrese sus apellidos: ").strip().title()
+
+# Solicitar peso y estatura
+peso = float(input("Ingrese su peso en kilogramos: "))
+estatura = float(input("Ingrese su estatura en metros: "))
+
+# Calcular el Índice de Masa Corporal
 imc = peso / (estatura ** 2)
 
-# 3. Mostrar los resultados
-print("\n--- RESULTADOS DEL CÁLCULO ---")
-print("Nombre:", nombre)
-print("Edad:", edad, "años")
-print("Peso:", peso, "kg")
-print("Estatura:", estatura, "m")
-print("Índice de Masa Corporal (IMC):", round(imc, 2), "kg/m²")
+# Mostrar el reporte final
+print("\n" + "=" * 45)
+print("          REPORTE DE RESULTADOS")
+print("=" * 45)
+
+print(f"Nombre completo : {nombres} {apellidos}")
+print(f"Peso            : {peso:.2f} kg")
+print(f"Estatura        : {estatura:.2f} m")
+print(f"Índice de Masa Corporal (IMC): {imc:.2f}")
+
+print("=" * 45)
+print("     Cálculo realizado correctamente.")
+print("=" * 45)
