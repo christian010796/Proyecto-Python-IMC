@@ -1,32 +1,68 @@
-# Calculadora de Índice de Masa Corporal (IMC)
-# Fundamentos de Python - Semana 3
-# Reto: Formateo y Estética de Datos
+# Calculadora de IMC
+# Fundamentos de Python - Entrega final
 
-print("=" * 45)
-print("       CALCULADORA DE IMC")
-print("=" * 45)
+def solicitar_texto(mensaje):
+    """Solicita un texto y evita campos vacíos."""
+    while True:
+        dato = input(mensaje).strip()
 
-# Solicitar los datos personales
-nombres = input("Ingrese sus nombres: ").strip().title()
-apellidos = input("Ingrese sus apellidos: ").strip().title()
+        if dato:
+            return dato.title()
 
-# Solicitar peso y estatura
-peso = float(input("Ingrese su peso en kilogramos: "))
-estatura = float(input("Ingrese su estatura en metros: "))
+        print("Error: este campo no puede estar vacío.")
 
-# Calcular el Índice de Masa Corporal
-imc = peso / (estatura ** 2)
 
-# Mostrar el reporte final
-print("\n" + "=" * 45)
-print("          REPORTE DE RESULTADOS")
-print("=" * 45)
+def solicitar_numero(mensaje, entero=False):
+    """Solicita un número válido y positivo."""
+    while True:
+        dato = input(mensaje).strip()
 
-print(f"Nombre completo : {nombres} {apellidos}")
-print(f"Peso            : {peso:.2f} kg")
-print(f"Estatura        : {estatura:.2f} m")
-print(f"Índice de Masa Corporal (IMC): {imc:.2f}")
+        if not dato:
+            print("Error: este campo no puede estar vacío.")
+            continue
 
-print("=" * 45)
-print("     Cálculo realizado correctamente.")
-print("=" * 45)
+        try:
+            if entero:
+                numero = int(dato)
+            else:
+                numero = float(dato)
+
+            if numero <= 0:
+                print("Error: ingrese un número mayor que cero.")
+                continue
+
+            return numero
+
+        except ValueError:
+            print("Error: debe ingresar un valor numérico válido.")
+
+
+def main():
+    print("=" * 40)
+    print("       CALCULADORA DE IMC")
+    print("=" * 40)
+
+    nombres = solicitar_texto("Ingrese sus nombres: ")
+    apellidos = solicitar_texto("Ingrese sus apellidos: ")
+    edad = solicitar_numero("Ingrese su edad: ", entero=True)
+    peso = solicitar_numero("Ingrese su peso en kg: ")
+    estatura = solicitar_numero("Ingrese su estatura en metros: ")
+
+    imc = peso / (estatura ** 2)
+
+    print("\n" + "=" * 40)
+    print("       REPORTE DE RESULTADOS")
+    print("=" * 40)
+
+    print(f"Nombre completo: {nombres} {apellidos}")
+    print(f"Edad: {edad} años")
+    print(f"Peso: {peso:.2f} kg")
+    print(f"Estatura: {estatura:.2f} m")
+    print(f"Índice de Masa Corporal (IMC): {imc:.2f}")
+
+    print("=" * 40)
+    print("Cálculo realizado correctamente.")
+
+
+if __name__ == "__main__":
+    main()
